@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Update guest book{% endblock %}
+{% block nav %}
+    <li class="nav-item">
+        <a  href="{% url 'guest_book_view' guest_book.pk%}">Вернуться к гостевой книжке</a>
+    </li>{% endblock %}
+{% block content %}
+    <h1>Update Guest book</h1>
+    <form method="post">
+        {% include "partial/form.html" with button_text="Сохранить"  %}
+    </form>
+
+{% endblock %}
+
+

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="{% url 'guest_book_delete_view' guest_book.pk %}" method="POST">
+    {% csrf_token %}
+        <h2>Вы действительно хотите удалить гостевую книгу {{ guest_book.title }}</h2>
+        <input type="submit" value="Да">
+    </form>
+    <a href="{% url 'guest_book_view' guest_book.pk %}"><button type="button" class="btn btn-light">Нет</button></a>
+{% endblock %}

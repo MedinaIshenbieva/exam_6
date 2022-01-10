@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}GuestBook {{ guest_book.pk }}{% endblock %}
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'guest_book_add' %}">Создание гостевой книги</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'guest_book_update_view' guest_book.pk %}">Редактировать</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'guest_book_delete_view' guest_book.pk %}">Удалить</a>
+    </li>
+{% endblock %}
+{% block content %}
+    <h1>{{ guest_book.author }}</h1>
+    <p>{{ guest_book.email }}<p>
+    <p>{{ guest_book.text }}</p>
+    <p>{{guest_book.status}}</p>
+{% endblock %}

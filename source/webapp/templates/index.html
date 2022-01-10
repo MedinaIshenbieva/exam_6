@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for book in guest_book %}
+        <h3>{{ book. title }}</h3>
+        <a href="{% url 'guest_book_update_view' book.pk %}"><i class="bi bi-badge-hd"></i></a> <a href="{% url 'guest_book_delete_view'guest_book.pk %}"><i class="bi bi-badge-tm"></i></a>
+        <p><a href="{% url 'guest_book_view' book.pk %}">Подробнее...</a></p>
+    {% endfor %}
+{% endblock %}
