@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('text', models.TextField(max_length=2000, verbose_name='Текст записи')),
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')),
                 ('updated_at', models.DateTimeField(auto_now_add=True, verbose_name='Дата изменения')),
-                ('status', models.CharField(choices=[('active', 'Активно'), ('blocked', 'Заблокировано')], default='active', max_length=15, verbose_name='Статус')),
+                ('status', models.CharField(choices=[('active', 'Активно'), ('blocked', 'Заблокировано')], default='active', verbose_name='Статус')),
             ],
             options={
                 'verbose_name': 'Гостевая книга',
