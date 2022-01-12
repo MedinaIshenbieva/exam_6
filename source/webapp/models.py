@@ -10,7 +10,7 @@ class GuestBook(models.Model):
     text = models.TextField(max_length=2000, null=False, blank=False, verbose_name="Текст записи")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата изменения")
-    status = models.CharField(max_length=15, null=False, blank=False, default='active', choices=STATUS_CHOICES,
+    status = models.CharField(null=False, blank=False, default='active', choices=STATUS_CHOICES,
                               verbose_name="Статус")
 
     def __str__(self):
